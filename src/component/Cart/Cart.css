@@ -1,3 +1,6 @@
 .cart-info{
-padding: 10px;
+    position: sticky;
+    top: 0;
+    padding: 10px;
+    padding-left: 20px;
 }
