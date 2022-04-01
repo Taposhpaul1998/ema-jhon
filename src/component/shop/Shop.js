@@ -1,33 +1,17 @@
+import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import { addToDb, getCart } from '../../utilities/fakedb';
 import Cart from '../Cart/Cart';
+import useCart from '../Hooks/useCard';
+import useProducts from '../Hooks/useProduct';
 import Product from '../product/Product';
 import './shop.css'
 
 const Shop = () => {
-    const [products, setProducts] = useState([]);
-    const [cart, setCart] = useState([]);
-    useEffect(() => {
-        fetch('products.json')
-            .then(res => res.json())
-            .then(data => setProducts(data))
-    }, [])
-
-    useEffect(() => {
-        const storedCart = getCart();
-        const savedCart = [];
-        for (const id in storedCart) {
-            const addedProduct = products.find(products => products.id === id)
-            if (addedProduct) {
-                const quantity = storedCart[id];
-                addedProduct.quantity = quantity;
-                savedCart.push(addedProduct);
-            }
-
-        }
-        setCart(savedCart);
-
-    }, [products])
+    const [products, setProducts] = useProducts([]);
+    const [cart, setCart] = useCart(products);
 
     const hendelAddCart = (selectedProduct) => {
         const exists = cart.find(product => product.id === selectedProduct.id);
@@ -58,7 +42,9 @@ const Shop = () => {
             <div className="cart-conteiner">
                 <Cart
                     cart={cart}
-                ></Cart>
+                >
+                    <Link to="/order"> <button className='Checkout-btn'>Reverw order <FontAwesomeIcon icon={faArrowRight}></FontAwesomeIcon></button></Link>
+                </Cart>
             </div>
         </div>
     );

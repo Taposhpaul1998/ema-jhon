@@ -1,0 +1,19 @@
+.orderCart {
+    min-height: 545px;
+}
+
+button.Checkout-btn {
+    padding: 6px 15px;
+    border: none;
+    border-radius: 5px;
+    background-color: #2700ffb8;
+    color: #201f1f;
+    font-size: 14px;
+}
+
+button.Checkout-btn:hover {
+    cursor: pointer;
+    background-color: #005affe0;
+    color: #ffffff;
+    transition: .5s;
+}

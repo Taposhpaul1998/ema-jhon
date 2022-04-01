@@ -1,0 +1,60 @@
+.order-products {
+    margin: 6px 154px;
+}
+
+.my-orders {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid #80808081;
+    margin: 20px;
+    border-radius: 8px;
+}
+
+.product-detales {
+    display: flex;
+}
+
+.product-detales img {
+    padding: 5px;
+    max-width: 90px;
+    border-radius: 8px;
+}
+
+
+.order-info {
+    margin-left: 15px;
+}
+
+.order-info h4 {
+    line-height: 0px;
+    margin-top: 15px;
+    font-family: sans-serif;
+    font-weight: 600;
+    margin-bottom: 0px;
+}
+
+.order-info p {
+    line-height: 6px;
+    font-weight: 400;
+}
+
+.order-info p small {
+    color: #fb9804;
+    font-weight: 600;
+}
+
+.delet-btn {
+    margin-right: 15px;
+}
+
+.delet-btn button {
+    color: #ff000096;
+    width: 45px;
+    height: 45px;
+    border-radius: 24px;
+    border: none;
+    font-size: 22px;
+    background-color: #ff00002e;
+    cursor: pointer;
+}
