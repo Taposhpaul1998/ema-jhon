@@ -5,6 +5,9 @@ import { Route, Routes } from 'react-router-dom';
 import Order from './component/order/Order';
 import About from './component/about/About';
 import Inventory from './component/Inventory/Inventory';
+import Login from './component/Login/Login';
+import Signup from './component/Signup/Signup';
+import RequireAuth from './component/RequireAuth/RequireAuth';
 
 function App() {
   return (
@@ -15,7 +18,11 @@ function App() {
         <Route path='/shop' element={<Shop></Shop>}></Route>
         <Route path='/order' element={<Order></Order>}></Route>
         <Route path='/about' element={<About></About>}></Route>
-        <Route path='/inventory' element={<Inventory></Inventory>}></Route>
+        <Route path='/login' element={<Login></Login>}></Route>
+        <Route path='/signup' element={<Signup></Signup>}></Route>
+        <Route path='/inventory' element={
+          <RequireAuth><Inventory></Inventory></RequireAuth>
+        }></Route>
       </Routes>
 
     </div>
