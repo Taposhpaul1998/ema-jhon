@@ -13,16 +13,16 @@ const Order = () => {
     const [products, setProducts] = useProducts();
     const [cart, setCart] = useCart(products);
     const hendelRemoveProduct = product => {
-        const rest = cart.filter(item => item.id !== product.id);
+        const rest = cart.filter(item => item._id !== product._id);
         setCart(rest);
-        removeFromDb(product.id)
+        removeFromDb(product._id)
     }
     return (
         <div className='shop-conteiner'>
             <div className="order-products">
                 {
                     cart.map(product => <OrderProduct
-                        key={product.id}
+                        key={product._id}
                         product={product}
                         hendelRemoveProduct={hendelRemoveProduct}
                     ></OrderProduct>)

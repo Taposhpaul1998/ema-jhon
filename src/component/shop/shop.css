@@ -1,14 +1,37 @@
 .shop-conteiner{
     display: grid;
     grid-template-columns: 4fr 1fr;
+    position: relative;
 }
 .product-container{
     display: grid;
     margin-top: 50px;
+    margin-bottom: 100px;
     grid-template-columns: repeat(3,1fr);
     grid-gap: 35px;
     padding: 0px 35px;
 }
 .cart-conteiner{
     background-color: rgba(255, 153, 0, 0.3);
+}
+.paginason{
+    position: absolute;
+    bottom: 25px;
+    right: 40%;
+}
+.paginason button{
+    margin-right: 5px;
+    padding: 10px 20px;
+    background-color: #ffffff;
+    border: 1px solid orange;
+}
+.paginason .selected {
+    background-color: orange;
+    color: white;
+}
+.select{
+    margin-right: 5px;
+    padding: 9px 10px;
+    background-color: #ffffff;
+    border: 1px solid orange;
 }
