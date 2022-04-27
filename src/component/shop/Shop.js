@@ -5,13 +5,12 @@ import { Link } from 'react-router-dom';
 import { addToDb} from '../../utilities/fakedb';
 import Cart from '../Cart/Cart';
 import useCart from '../Hooks/useCard';
-import useProducts from '../Hooks/useProduct';
 import Product from '../product/Product';
 import './shop.css'
 
 const Shop = () => {
-    const [products, setProducts] = useProducts([]);
-    const [cart, setCart] = useCart(products);
+    const [products, setProducts] = useState([]);
+    const [cart, setCart] = useCart();
     const [pageCount, setPageCount]=useState(0);
     const [pages, setPages]=useState(0);
     const [size, setSize] = useState(10);
@@ -22,7 +21,7 @@ const Shop = () => {
         fetch(`http://localhost:5000/product?page=${pages}&size=${size}`)
             .then(res => res.json())
             .then(data => setProducts(data));
-    }, [])
+    }, [pages ,size]);
 
     useEffect(()=>{
         fetch('http://localhost:5000/productCount')

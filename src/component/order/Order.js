@@ -5,13 +5,11 @@ import { Link } from 'react-router-dom';
 import { removeFromDb } from '../../utilities/fakedb';
 import Cart from '../Cart/Cart';
 import useCart from '../Hooks/useCard';
-import useProducts from '../Hooks/useProduct';
 import OrderProduct from '../orderProduct/OrderProduct';
 import './Order.css'
 
 const Order = () => {
-    const [products, setProducts] = useProducts();
-    const [cart, setCart] = useCart(products);
+    const [cart, setCart] = useCart();
     const hendelRemoveProduct = product => {
         const rest = cart.filter(item => item._id !== product._id);
         setCart(rest);
